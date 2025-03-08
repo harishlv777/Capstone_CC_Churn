@@ -227,15 +227,29 @@ Track feature importance shifts over time (e.g., new pain points like network ou
 
 Final Recommendation: Prioritize fixing technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
 
-# Next Steps & Recommendations
-Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if you can squeeze out better performance
-Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable.
-Polynomial Features: Consider adding polynomial features to capture non-linear relationships.
+# Additional Details 
+- Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if you can squeeze out better performance
+- Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable.
+- Polynomial Features: Consider adding polynomial features to capture non-linear relationships.
 Feature Selection/Dimensionality Reduction:
-Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
-PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
-Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
-A/B Testing: Once you have a refined model, perform A/B testing on a small segment of your customer base to compare the performance of ML(LR) model-driven marketing strategy against your current approach.
-Monitoring: Continuously monitor the performance of the model in a production environment and retrain it periodically with new data to maintain its accuracy and relevance.
+- Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
+- PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
+- Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
+- A/B Testing: Once you have a refined model, perform A/B testing on a small segment of your customer base to compare the performance of ML(LR) model-driven marketing strategy against your current approach.
+- Monitoring: Continuously monitor the performance of the model in a production environment and retrain it periodically with new data to maintain its accuracy and relevance.
+
+# Plots
 
 
+# Files
+SiddiCC_Churn.ipynb - Jupyter notebook
+data/SiddiCC_Churn_data.csv - Contact Center dataset
+plots/Capstone_CC_Churn_plots.pdf - plots supporting the analysis
+readings - CRISP-DM-BANK.pdf CRISP-DM methodology document
+readme.md - current file
+
+# Requirements
+Python 3.x, pandas, numby, matplotlib, seaborn, scikit-learn Note - plot_helpers is required to render_plot Run pip list | grep plot_helpers to check if plot_helpers exists. If missing, either install it or replace render_plot with Matplotlib/Seaborn functions
+
+# How to execute
+Clone the repository, build the environment with required packages, followed by Jypyter notebook execution.
