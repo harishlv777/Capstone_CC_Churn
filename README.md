@@ -149,8 +149,93 @@ Customer complaints, low usage, and short subscription lengths are strong churn 
 Handling class imbalance is crucial for accurate modeling.
 Feature engineering can enhance predictive power (e.g., engagement metrics, sentiment analysis).
 
+# Model Development
+1. Data Preprocessing
+Encoded categorical variables (e.g., Status, Tariff Plan).
+Normalized numerical features using StandardScaler.
+Handled class imbalance using SMOTE to balance churn/non-churn cases.
+Split data into 80% training and 20% testing sets.
 
+2. Model Training & Evaluation
+Trained three models:
 
+Logistic Regression – Baseline model.
+Random Forest – Tree-based model for better feature importance.
+XGBoost – Optimized gradient boosting model.
+SVM
+KNN
 
+Best Model: Random Forest or Gradient Boosting typically outperformed other models (like Logistic Regression, SVM, or KNN) in terms of AUC-ROC (e.g., ~0.90+), demonstrating robustness in handling imbalanced data and capturing non-linear relationships.
+
+Key Metrics: The model achieved high precision (identifying true churn) and recall (minimizing false negatives), critical for prioritizing retention efforts.
+
+Model Performance Metrics
+Model	              Accuracy	ROC-AUC	Precision	Recall	F1-Score
+Logistic Regression	XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
+Random Forest	      XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
+XGBoost	            XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
+SVM:                XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
+KNN:                XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
+
+Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
+
+Hyperparameter Tuning
+Used GridSearchCV to fine-tune Random Forest parameters:
+
+n_estimators: 50, 100, 200
+max_depth: None, 10, 20
+min_samples_split: 2, 5, 10
+Found best-performing hyperparameters and re-trained the model.
+
+Key Insights
+Top churn predictors: Analyzing feature importance showed that variables like Call Duration, Complaint History, and Tariff Plan significantly impacted churn.
+SMOTE balancing improved recall, reducing false negatives (customers likely to churn).
+Next steps: Deploy model in a contact center CRM to predict churn and trigger proactive retention strategies.
+
+# Conclusion
+Top Features Impacting Churn
+Call Failure: Higher call failures strongly correlated with churn (technical issues drive dissatisfaction).
+Complaints: Complaints were a direct indicator of dissatisfaction.
+Usage Patterns: Low "Seconds of Use" or "Frequency of Use" signaled disengagement.
+Customer Value: Lower-value customers were more likely to churn.
+Subscription Length: Newer customers showed higher churn risk.
+
+# 3. Business Impact
+The model enables proactive retention strategies (e.g., targeted discounts for high-risk customers).
+Reducing churn by even 5% could save significant revenue for telecom companies.
+
+# Next Steps & Recommendations
+1. Model Improvements
+Address Class Imbalance: Use SMOTE or ADASYN to handle class imbalance and improve minority class prediction.
+Feature Engineering: Create interaction terms (e.g., "Call Failure per Usage") or temporal features.
+Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance.
+
+2. Deployment Strategies
+Real-Time Integration: Embed the model into CRM systems to flag high-risk customers during service calls.
+Automated Alerts: Trigger automated retention offers (e.g., free data packs) via email/SMS for predicted churners.
+
+3. Ethical Considerations
+Bias Mitigation: Audit the model for fairness across demographics (e.g., age groups or regions).
+Transparency: Use SHAP/LIME to explain predictions to customers and build trust.
+
+4. A/B Testing
+Test retention strategies on a subset of high-risk customers and measure churn reduction compared to a control group.
+
+5. Continuous Monitoring
+Retrain the model quarterly with fresh data to adapt to changing customer behavior.
+Track feature importance shifts over time (e.g., new pain points like network outages).
+
+Final Recommendation: Prioritize fixing technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
+
+# Next Steps & Recommendations
+Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if you can squeeze out better performance
+Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable.
+Polynomial Features: Consider adding polynomial features to capture non-linear relationships.
+Feature Selection/Dimensionality Reduction:
+Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
+PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
+Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
+A/B Testing: Once you have a refined model, perform A/B testing on a small segment of your customer base to compare the performance of ML(LR) model-driven marketing strategy against your current approach.
+Monitoring: Continuously monitor the performance of the model in a production environment and retrain it periodically with new data to maintain its accuracy and relevance.
 
 
