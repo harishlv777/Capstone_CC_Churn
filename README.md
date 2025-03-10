@@ -172,13 +172,15 @@ Subscription Length vs. Churn
 
 - Key Metrics: The model achieved high precision (identifying true churn) and recall (minimizing false negatives), critical for prioritizing retention efforts.
 
-Model Performance Metrics
-Model	              Accuracy	ROC-AUC	Precision	Recall	F1-Score
-Logistic Regression	XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
-Random Forest	      XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
-XGBoost	            XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
-SVM:                XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
-KNN:                XX.XX%	  XX.XX	  XX.XX%	  XX.XX%	XX.XX%
+## Model Performance Metrics
+
+Model	              ROC-AUC	  Precision(Churn)	Recall(Churn)	F1-Score (Churn)  Accuracy
+-----------------------------------------------------------------------------------------
+Logistic Regression	0.76   	  0.72          	  0.68      	  0.70	            0.82
+Random Forest	      0.88   	  0.82          	  0.76      	  0.79	            0.86
+XGBoost	            0.85   	  0.80          	  0.73      	  0.76	            0.84
+SVM:                0.74  	  0.70          	  0.65      	  0.67	            0.81
+KNN:                0.72   	  0.68          	  0.62      	  0.65	            0.79
 
 - Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
 
