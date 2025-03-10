@@ -158,9 +158,8 @@ Subscription Length vs. Churn
 - Handled class imbalance using SMOTE to balance churn/non-churn cases.
 - Split data into 80% training and 20% testing sets.
 
-2. Model Training & Evaluation
-## Trained following models:
-
+## 2. Model Training & Evaluation
+Trained following models:
 - Logistic Regression – Baseline model.
 - Random Forest – Tree-based model for better feature importance.
 - XGBoost – Optimized gradient boosting model.
@@ -174,13 +173,13 @@ Subscription Length vs. Churn
 
 ## Model Performance Metrics
 
-- Model	              ROC-AUC	  Precision(Churn)	Recall(Churn)	F1-Score (Churn)  Accuracy
-- -----------------------------------------------------------------------------------------
-- Logistic Regression	0.76   	  0.72          	  0.68      	  0.70	            0.82
-- Random Forest	      0.88   	  0.82          	  0.76      	  0.79	            0.86
-- XGBoost	            0.85   	  0.80          	  0.73      	  0.76	            0.84
-- SVM                 0.74  	  0.70          	  0.65      	  0.67	            0.81
-- KNN                 0.72   	  0.68          	  0.62      	  0.65	            0.79
+- Model	              ROC-AUC	    Precision(Churn)	  Recall(Churn)	  F1-Score (Churn)    Accuracy
+- -------------------------------------------------------------------------------------------------
+- Logistic Regression	0.76   	        0.72          	  0.68      	  0.70	            0.82
+- Random Forest	      0.88   	        0.82          	  0.76      	  0.79	            0.86
+- XGBoost	            0.85   	        0.80          	  0.73      	  0.76	            0.84
+- SVM                 0.74  	        0.70          	  0.65      	  0.67	            0.81
+- KNN                 0.72   	        0.68          	  0.62      	  0.65	            0.79
 
 - Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
 ### Key Observations:
