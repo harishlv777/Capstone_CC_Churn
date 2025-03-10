@@ -245,14 +245,17 @@ Feature Selection/Dimensionality Reduction:
 
 
 # Files
-SiddiCC_Churn.ipynb - Jupyter notebook
-data/SiddiCC_Churn_data.csv - Contact Center dataset
-plots/Capstone_CC_Churn_plots.pdf - plots supporting the analysis
-readings - CRISP-DM-BANK.pdf CRISP-DM methodology document
-readme.md - current file
+- SiddiCC_Churn.ipynb - Jupyter notebook
+- data/SiddiCC_Churn_data.csv - Contact Center dataset
+- plots/Capstone_CC_Churn_plots.pdf - plots supporting the analysis
+- readings - CRISP-DM-BANK.pdf CRISP-DM methodology document
+- readme.md - current file
 
 # Requirements
-Python 3.x, pandas, numby, matplotlib, seaborn, scikit-learn Note - plot_helpers is required to render_plot Run pip list | grep plot_helpers to check if plot_helpers exists. If missing, either install it or replace render_plot with Matplotlib/Seaborn functions
+- Python 3.x, pandas, numby, matplotlib, seaborn, scikit-learn Note
+- plot_helpers is required to render_plot
+- Run pip list | grep plot_helpers to check if plot_helpers exists. If missing, either install it or replace render_plot with Matplotlib/Seaborn functions
 
 # How to execute
-Clone the repository, build the environment with required packages, followed by Jypyter notebook execution.
+- Clone the repository
+- Build the environment with required packages, followed by Jypyter notebook execution.
