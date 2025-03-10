@@ -182,6 +182,7 @@ Trained following models:
 - KNN                 0.72   	        0.68          	  0.62      	  0.65	            0.79
 
 - Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
+
 ### Key Observations:
 #### Class Imbalance Impact:
 - High accuracy scores (~80%) despite modest recall for churn class
