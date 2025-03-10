@@ -170,54 +170,54 @@ Trained following models:
 
 ## Model Performance Metrics
 ### Model Performance (Accuracy & AUC)
-Model	              Accuracy	AUC
-Logistic Regression	0.90	    0.92
-Random Forest	      0.95	    0.99
-Gradient Boosting	  0.95	    0.98
-SVM	                0.90	    0.93
-KNN	                0.90	    0.89
+- Model	              Accuracy	AUC
+- Logistic Regression	0.90	    0.92
+- Random Forest	      0.95	    0.99
+- Gradient Boosting	  0.95	    0.98
+- SVM	                0.90	    0.93
+- KNN	                0.90	    0.89
 
 ### Precision, Recall, and F1-Score (Class 0)
-Model	              Precision (0)	Recall (0)	F1-score (0)
-Logistic Regression	0.90	        0.99	      0.94
-Random Forest	      0.96	        0.98	      0.97
-Gradient Boosting	  0.96	        0.98	      0.97
-SVM	                0.90	        1.00	      0.94
-KNN	                0.91	        0.98	      0.94
+- Model	              Precision (0)	Recall (0)	F1-score (0)
+- Logistic Regression	0.90	        0.99	      0.94
+- Random Forest	      0.96	        0.98	      0.97
+- Gradient Boosting	  0.96	        0.98	      0.97
+- SVM	                0.90	        1.00	      0.94
+- KNN	                0.91	        0.98	      0.94
 
 ### Precision, Recall, and F1-Score (Class 1)
-Model	              Precision (1)	Recall (1)	F1-score (1)
-Logistic Regression	0.85	        0.41	      0.56
-Random Forest	      0.87	        0.78	      0.82
-Gradient Boosting	  0.88	        0.77	      0.82
-SVM	                1.00	        0.37	      0.54
-KNN	                0.79	        0.48	      0.60
+- Model	              Precision (1)	Recall (1)	F1-score (1)
+- Logistic Regression	0.85	        0.41	      0.56
+- Random Forest	      0.87	        0.78	      0.82
+- Gradient Boosting	  0.88	        0.77	      0.82
+- SVM	                1.00	        0.37	      0.54
+- KNN	                0.79	        0.48	      0.60
 
 ### Macro and Weighted Averages
-Model	              Macro Avg Precision	  Macro Avg Recall	  Macro Avg F1-Score	Weighted Avg Precision	Weighted Avg Recall	  Weighted Avg F1-Score
-Logistic Regression	0.88	                    0.70	                0.75	                0.89	                0.90	                0.88
-Random Forest	      0.91	                    0.88	                0.89	                0.94	                0.95	                0.94
-Gradient Boosting	  0.92	                    0.87	                0.90	                0.95	                0.95	                0.95
-SVM	                0.95	                    0.69	                0.74	                0.91	                0.90	                0.88
-KNN	                0.85	                    0.73	                0.77	                0.89	                0.90	                0.89
+- Model	              Macro Avg Precision	  Macro Avg Recall	  Macro Avg F1-Score	Weighted Avg Precision	Weighted Avg Recall	  Weighted Avg F1-Score
+- Logistic Regression	0.88	                    0.70	                0.75	                0.89	                0.90	                0.88
+- Random Forest	      0.91	                    0.88	                0.89	                0.94	                0.95	                0.94
+- Gradient Boosting	  0.92	                    0.87	                0.90	                0.95	                0.95	                0.95
+- SVM	                0.95	                    0.69	                0.74	                0.91	                0.90	                0.88
+- KNN	                0.85	                    0.73	                0.77	                0.89	                0.90	                0.89
 
-Confusion Matrix
-Model	                      Confusion Matrix (0,0)	Confusion Matrix (0,1)	Confusion Matrix (1,0)	Confusion Matrix (1,1)
-Logistic Regression	              524	                         7	                  58	                      41
-Random Forest	                    519	                        12	                  22	                      77
-Gradient Boosting	                521	                        10	                  23	                      76
-SVM	                              531	                         0                  	62	                      37
-KNN	                              518	                        13	                  51	                      48
+### Confusion Matrix
+- Model	                      Confusion Matrix (0,0)	Confusion Matrix (0,1)	Confusion Matrix (1,0)	Confusion Matrix (1,1)
+- Logistic Regression	              524	                         7	                  58	                      41
+- Random Forest	                    519	                        12	                  22	                      77
+- Gradient Boosting	                521	                        10	                  23	                      76
+- SVM	                              531	                         0                  	62	                      37
+- KNN	                              518	                        13	                  51	                      48
 
 - Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
 - Best Model for Accuracy: Random Forest and Gradient Boosting, both with an accuracy of 0.95.
-Best Model for AUC: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
-Precision (Class 0): Random Forest and Gradient Boosting show the highest precision for class 0, at 0.96 and 0.96, respectively.
-Recall (Class 1): Logistic Regression has the lowest recall for class 1 (0.41), while Random Forest, Gradient Boosting, and SVM are better at capturing class 1 instances, with recall values of 0.78, 0.77, and 0.37, respectively.
-F1-score (Class 0): Both Random Forest and Gradient Boosting show high F1-scores for class 0 (0.97), indicating a good balance between precision and recall.
-Confusion Matrix: The confusion matrices indicate that models like Random Forest and Gradient Boosting have fewer false positives (class 0 predicted as 1), with SVM and KNN showing more false negatives for class 1.
-KNN's recall scores show riskiest for business as sizable amount of actual churners are missed from the analysis.
-Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
+- Best Model for AUC: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
+- Precision (Class 0): Random Forest and Gradient Boosting show the highest precision for class 0, at 0.96 and 0.96, respectively.
+- Recall (Class 1): Logistic Regression has the lowest recall for class 1 (0.41), while Random Forest, Gradient Boosting, and SVM are better at capturing class 1 instances, with recall values of 0.78, 0.77, and 0.37, respectively.
+- F1-score (Class 0): Both Random Forest and Gradient Boosting show high F1-scores for class 0 (0.97), indicating a good balance between precision and recall.
+- Confusion Matrix: The confusion matrices indicate that models like Random Forest and Gradient Boosting have fewer false positives (class 0 predicted as 1), with SVM and KNN showing more false negatives for class 1.
+- KNN's recall scores misses majority of actual churners, it is considered riskier for business.
+- #### Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
 
 ### Key Observations:
 #### Class Imbalance Impact:
