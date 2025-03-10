@@ -209,6 +209,10 @@ Trained following models:
 - SVM	                              531	                         0                  	62	                      37
 - KNN	                              518	                        13	                  51	                      48
 
+
+
+### Key Observations:
+
 - Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
 - Best Model for Accuracy: Random Forest and Gradient Boosting, both with an accuracy of 0.95.
 - Best Model for AUC: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
@@ -219,7 +223,6 @@ Trained following models:
 - KNN's recall scores misses majority of actual churners, it is considered riskier for business.
 - #### Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
 
-### Key Observations:
 #### Class Imbalance Impact:
 - High accuracy scores (~80%) despite modest recall for churn class
 - Precision-Recall tradeoff evident (e.g., Random Forest has 82% precision but 76% recall)
