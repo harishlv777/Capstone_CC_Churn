@@ -1,10 +1,10 @@
-# Capstone_CC_Churn
+# Capstone_ContactCenter_Churn for Software as a Subscription (SaaS) Business
 
 "In today's subscription-based economy, high customer churn poses a significant threat to enterprises and service providers. This capstone project tackles this critical challenge by leveraging machine learning to predict customer churn risk within a contact center. By analyzing data encompassing customer interactions, agent performance, and demographic factors, the project aims to develop a predictive model capable of identifying customers at high risk of churn. This model will empower contact centers to proactively implement targeted retention strategies, ultimately boosting customer satisfaction and minimizing revenue attrition.
 
 # 1. Business Understanding
-### Contact Center Churn 
-Contact Center Churn refers to a customer discontinuing their relationship with a business.
+### Churn 
+Churn refers to a customer discontinuing their relationship with a business.
 - A customer canceling their software/hardware subscription or contract.
 - A customer reducing their usage significantly before canceling.
 - Long periods of inactivity or non-engagement with the contact center.
@@ -13,7 +13,7 @@ Contact Center Churn refers to a customer discontinuing their relationship with 
 ## Business Goal
 Primary goal is to accurately predict customer churn risk using contact center interaction data. By identifying key factors leading to churn, the business can proactively implement retention strategies, improve customer satisfaction, and reduce revenue loss.
 
-Capstone_CC_Churn will focus on answering:
+Capstone_ContactCenter_Churn will focus on answering:
 - What are the leading indicators of customer churn in contact center interactions?
 - How can businesses use predictive models to intervene before customers churn?
 - What are the most impactful variables contributing to churn (e.g., complaints, status, frequency of use, usage in seconds, Average Handle time, sentiment score etc.)?
@@ -37,20 +37,17 @@ By proactively identifying at-risk customers, businesses can implement targeted 
 
 ## Project Constraints
 Several challenges may impact the project's scope and execution:
-
-- Data Availability – Access to comprehensive and high-quality customer interaction, agent performance and contact center data may be limited.
-- Time Constraints – Model development, testing, and validation must be completed within the project timeline.
+- Data Availability – Access to comprehensive and high-quality customer interaction, agent performance and contact center data may be limited. Contact Center data consisting of 3K+ records was considered.
+- Time Constraints – Model development, testing, and validation is critical given realtime nature of contact center and as-a-subscription business
 - Computational Resources – Running machine learning models on large datasets may require high processing power.
 - Interpretability – Ensuring the model is explainable for business stakeholders to act on insights effectively.
 
 # 2. Data Understanding
-
 Data source: "data/SiddiCC_Churn_data.csv" containing customer data
 The dataset consists of 3,150 records and 25 features, covering various aspects of customer behavior, usage, and interactions with the contact center.
 
 ## Key Features:
 Customer Interaction Metrics
-
 - Call Failure: Number of failed call attempts.
 - Complains: Whether the customer has made complaints (binary).
 - Seconds_of_Use: Total call duration in seconds.
@@ -85,7 +82,7 @@ Target Variable
 - No missing values detected in the dataset.
 - The dataset contains a mix of numerical, categorical (binary), and continuous features.
 - Churn is the primary target variable for prediction.
-- Features like Sentiment_Score, FCR, Service_Gap, and Complexity_Score may provide strong insights into customer dissatisfaction.
+- Features like Sentiment_Score, First Call Resolution (FCR), Service_Gap, and Complexity_Score may provide strong insights into customer dissatisfaction.
 
 ## Next Steps:
 - Check for class imbalance in the Churn column.
@@ -114,13 +111,13 @@ Target Variable
 
 ## 3. Outliers Detected (Potential Cleaning Required)
 - Significant outliers found in:
-- Charge Amount (370 outliers)
-- Frequency of SMS (368 outliers)
-- Subscription Length (282 outliers)
-- Status (782 outliers)
-- Age (688 outliers)
-- Churn (495 outliers)
-- Some features like AHT, FCR, Sentiment_Score, and SLA_Compliance do not have outliers.
+  - Charge Amount (370 outliers)
+  - Frequency of SMS (368 outliers)
+  - Subscription Length (282 outliers)
+  - Status (782 outliers)
+  - Age (688 outliers)
+  - Churn (495 outliers)
+  - Some features like AHT, FCR, Sentiment_Score, and SLA_Compliance do not have outliers.
 
 ## Next Steps
 - Handle class imbalance (oversampling, undersampling, or class weights).
@@ -163,8 +160,8 @@ Trained following models:
 - Logistic Regression – Baseline model.
 - Random Forest – Tree-based model for better feature importance.
 - XGBoost – Optimized gradient boosting model.
-- SVM
-- KNN
+- Support Vector Machine (SVM) - Supervised learning algorigthm for classification and regression tasks.
+- K-nearest neighbor (KNN) - Supervised learning classifier, which uses proximity to make classifications or predictions
 
 ## Best Model: 
 - Random Forest or Gradient Boosting typically outperformed other models (like Logistic Regression, SVM, or KNN) in terms of AUC-ROC (e.g., ~0.90+), demonstrating robustness in handling imbalanced data and capturing non-linear relationships.
@@ -172,16 +169,55 @@ Trained following models:
 - Key Metrics: The model achieved high precision (identifying true churn) and recall (minimizing false negatives), critical for prioritizing retention efforts.
 
 ## Model Performance Metrics
+### Model Performance (Accuracy & AUC)
+Model	              Accuracy	AUC
+Logistic Regression	0.90	    0.92
+Random Forest	      0.95	    0.99
+Gradient Boosting	  0.95	    0.98
+SVM	                0.90	    0.93
+KNN	                0.90	    0.89
 
-- Model	              ROC-AUC	    Precision(Churn)	  Recall(Churn)	  F1-Score (Churn)    Accuracy
-- -------------------------------------------------------------------------------------------------
-- Logistic Regression	0.76   	        0.72          	  0.68      	  0.70	            0.82
-- Random Forest	      0.88   	        0.82          	  0.76      	  0.79	            0.86
-- XGBoost	            0.85   	        0.80          	  0.73      	  0.76	            0.84
-- SVM                 0.74  	        0.70          	  0.65      	  0.67	            0.81
-- KNN                 0.72   	        0.68          	  0.62      	  0.65	            0.79
+### Precision, Recall, and F1-Score (Class 0)
+Model	              Precision (0)	Recall (0)	F1-score (0)
+Logistic Regression	0.90	        0.99	      0.94
+Random Forest	      0.96	        0.98	      0.97
+Gradient Boosting	  0.96	        0.98	      0.97
+SVM	                0.90	        1.00	      0.94
+KNN	                0.91	        0.98	      0.94
+
+### Precision, Recall, and F1-Score (Class 1)
+Model	              Precision (1)	Recall (1)	F1-score (1)
+Logistic Regression	0.85	        0.41	      0.56
+Random Forest	      0.87	        0.78	      0.82
+Gradient Boosting	  0.88	        0.77	      0.82
+SVM	                1.00	        0.37	      0.54
+KNN	                0.79	        0.48	      0.60
+
+### Macro and Weighted Averages
+Model	              Macro Avg Precision	  Macro Avg Recall	  Macro Avg F1-Score	Weighted Avg Precision	Weighted Avg Recall	  Weighted Avg F1-Score
+Logistic Regression	0.88	                    0.70	                0.75	                0.89	                0.90	                0.88
+Random Forest	      0.91	                    0.88	                0.89	                0.94	                0.95	                0.94
+Gradient Boosting	  0.92	                    0.87	                0.90	                0.95	                0.95	                0.95
+SVM	                0.95	                    0.69	                0.74	                0.91	                0.90	                0.88
+KNN	                0.85	                    0.73	                0.77	                0.89	                0.90	                0.89
+
+Confusion Matrix
+Model	                      Confusion Matrix (0,0)	Confusion Matrix (0,1)	Confusion Matrix (1,0)	Confusion Matrix (1,1)
+Logistic Regression	              524	                         7	                  58	                      41
+Random Forest	                    519	                        12	                  22	                      77
+Gradient Boosting	                521	                        10	                  23	                      76
+SVM	                              531	                         0                  	62	                      37
+KNN	                              518	                        13	                  51	                      48
 
 - Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
+- Best Model for Accuracy: Random Forest and Gradient Boosting, both with an accuracy of 0.95.
+Best Model for AUC: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
+Precision (Class 0): Random Forest and Gradient Boosting show the highest precision for class 0, at 0.96 and 0.96, respectively.
+Recall (Class 1): Logistic Regression has the lowest recall for class 1 (0.41), while Random Forest, Gradient Boosting, and SVM are better at capturing class 1 instances, with recall values of 0.78, 0.77, and 0.37, respectively.
+F1-score (Class 0): Both Random Forest and Gradient Boosting show high F1-scores for class 0 (0.97), indicating a good balance between precision and recall.
+Confusion Matrix: The confusion matrices indicate that models like Random Forest and Gradient Boosting have fewer false positives (class 0 predicted as 1), with SVM and KNN showing more false negatives for class 1.
+KNN's recall scores show riskiest for business as sizable amount of actual churners are missed from the analysis.
+Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
 
 ### Key Observations:
 #### Class Imbalance Impact:
