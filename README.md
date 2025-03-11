@@ -127,8 +127,14 @@ Target Variable
 - Converted categorical features (e.g., Tariff_1, Status) into ML friendly formats.
 
 # Exploratory Data Analysis (EDA) Summary
+Refer to the Capston_CC_Churn_Plots_v1 for detailed analysis.
+
 ## Churn Distribution
 The dataset is imbalanced, with significantly more non-churned customers (Churn = 0) compared to churned customers (Churn = 1).
+-  Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0.
+-  It would be good to target the customers with basic subscription plans with value added feature capabilities to uplift them to premium subscription with value added features.
+-  There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use a program
+-  The rate of cancelations within the “Basic Subscription (base plan)” with "Status=1" is  higher.
 
 ## Correlation Heatmap
 - Complains and Customer_Value show strong correlation with Churn.
@@ -147,6 +153,7 @@ The dataset is imbalanced, with significantly more non-churned customers (Churn 
 - Customer complaints, low usage, and short subscription lengths are strong churn indicators.
 - Handling class imbalance is crucial for accurate modeling.
 - Feature engineering can enhance predictive power (e.g., engagement metrics, sentiment analysis).
+- There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use a program
 
 # Model Development
 ## 1. Data Preprocessing
