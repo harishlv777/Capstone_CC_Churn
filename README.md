@@ -243,6 +243,7 @@ Used GridSearchCV to fine-tune Random Forest parameters:
 
 # Conclusion
 Top Features Impacting Churn
+- **Status**: Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0. It would be good to target the customers with basic subscription plans through campaigns, dedicated customer success managers, discounts, trial  to uplift them to premium subscription with value added features. There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use subscription programs
 - **Call Failure**: Higher call failures strongly correlated with churn (technical issues drive dissatisfaction).
 - **Complains**: Complaints were a direct indicator of dissatisfaction.
 - **Usage Patterns**: Low "Seconds of Use" or "Frequency of Use" signaled disengagement.
