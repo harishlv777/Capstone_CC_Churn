@@ -47,7 +47,7 @@ Data source: "data/SiddiCC_Churn_data.csv" containing customer data
 The dataset consists of 3,150 records and 25 features, covering various aspects of customer behavior, usage, and interactions with the contact center.
 
 ## Key Features:
-Customer Interaction Metrics
+### Customer Interaction Metrics
 - Call Failure: Number of failed call attempts.
 - Complains: Whether the customer has made complaints (binary).
 - Seconds_of_Use: Total call duration in seconds.
@@ -56,26 +56,26 @@ Customer Interaction Metrics
 - Distinct_Called_Numbers: Unique numbers called by the customer.
 - Transfer_Count: Number of times a call was transferred.
 - Callback_Count: Number of callbacks made to the customer.
-- Customer Subscription & Financial Metrics
 
+### Customer Subscription & Financial Metrics
 - Subscription_Length: Duration of the subscription (in months).
 - Charge Amount: Total charges billed to the customer.
 - Customer_Value: A numerical value representing the overall importance of the customer.
 - Tariff_1 & Tariff_2: Boolean indicators of different tariff plans.
-- Quality of Service & Sentiment Metrics
 
+### Quality of Service & Sentiment Metrics
 - AHT (Average Handling Time): Time taken to resolve a call.
 - FCR (First Call Resolution): Whether the issue was resolved on the first call (binary).
 - Sentiment_Score: Sentiment of customer interactions (likely derived from text analysis).
 - SLA_Compliance: Compliance with Service Level Agreements (percentage).
 - Service_Gap: Difference between SLA target and actual performance.
 - Complexity_Score: Complexity of the customer’s queries.
-- Demographics & Customer Status
 
+### Demographics & Customer Status
 - Age & Age_Group_Numeric: Customer’s age and numerical group classification.
 - Status: Customer’s status (potentially active, inactive, or on-hold).
 
-Target Variable
+### Target Variable
 - Churn: Binary indicator of whether the customer has churned (1) or not (0).
 
 ## Observations:
@@ -127,21 +127,20 @@ Target Variable
 - Converted categorical features (e.g., Tariff_1, Status) into ML friendly formats.
 
 # Exploratory Data Analysis (EDA) Summary
-Refer to the Capston_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis.
+Refer to the Capstone_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis.
 
 ## Churn Distribution
 The dataset is imbalanced, with significantly more non-churned customers (Churn = 0) compared to churned customers (Churn = 1).
 -  Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0.
--  It would be good to target the customers with basic subscription plans with value added feature capabilities to uplift them to premium subscription with value added features.
--  There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use a program
--  The rate of cancelations within the “Basic Subscription (base plan)” with "Status=1" is  higher.
-
+-  It would be good to target the customers with basic subscription plans through campaigns, dedicated customer success managers, discounts, trial  to uplift them to premium subscription with value added features.
+-  There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use subscription programs
+- 
 ## Correlation Heatmap
 - Complains and Customer_Value show strong correlation with Churn.
 - Features like Seconds_of_Use, Subscription_Length, and Charge Amount also exhibit meaningful relationships with churn.
 
 ## Box Plot Analysis
-- Customers who complained (Complains >= 1) have a higher chance of churn.
+- Customers who complained have a higher chance of churn.
 - Higher Customer_Value is associated with lower churn.
 - Lower Seconds_of_Use and Subscription_Length indicate a higher likelihood of churn.
 - Charge Amount shows significant variation but no clear trend.
