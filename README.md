@@ -85,8 +85,8 @@ Target Variable
 - Features like Sentiment_Score, First Call Resolution (FCR), Service_Gap, and Complexity_Score may provide strong insights into customer dissatisfaction.
 
 ## Next Steps:
-- Check for class imbalance in the Churn column.
-- Analyze feature distributions (e.g., correlation between features and churn).
+- Checked for class imbalance in the Churn column.
+- Analyzed feature distributions (e.g., correlation between features and churn).
 - Feature engineering (e.g., converting categorical variables, creating new derived features).
 - Outlier detection to identify potential anomalies in the data.
 
@@ -98,12 +98,12 @@ Target Variable
 - The dataset is imbalanced, meaning we may need resampling techniques (e.g., SMOTE or weighted models) to improve predictions.
 
 ## 2. Correlation with Churn
-- Positively correlated features (higher churn risk):
+### Positively correlated features (higher churn risk):
 - Complains (0.53) → Customers with complaints are more likely to churn.
 - Status (0.50) → Certain customer statuses may indicate higher churn probability.
 - Tariff_1 (0.11) → Some tariff plans may lead to higher churn.
-- Negatively correlated features (less likely to churn):
 
+### Negatively correlated features (less likely to churn):
 - Customer_Value (-0.29) → High-value customers are less likely to leave.
 - Seconds_of_Use (-0.30) → More call usage is associated with retention.
 - Frequency_of_SMS (-0.22) → Higher SMS usage means lower churn.
@@ -120,11 +120,11 @@ Target Variable
   - Some features like AHT, FCR, Sentiment_Score, and SLA_Compliance do not have outliers.
 
 ## Next Steps
-- Handle class imbalance (oversampling, undersampling, or class weights).
-- Remove or cap outliers to prevent them from skewing the model.
-- Feature selection based on correlation analysis.
-- Scale numerical features (normalization or standardization).
-- Convert categorical features (e.g., Tariff_1, Status) into machine-learning-friendly formats.
+- Handled class imbalance (oversampling, undersampling, or class weights).
+- Removed or cap outliers to prevent them from skewing the model.
+- Feature selection was performed based on correlation analysis.
+- Scaled numerical features (normalization or standardization).
+- Converted categorical features (e.g., Tariff_1, Status) into ML friendly formats.
 
 # Exploratory Data Analysis (EDA) Summary
 ## Churn Distribution
@@ -135,12 +135,12 @@ The dataset is imbalanced, with significantly more non-churned customers (Churn 
 - Features like Seconds_of_Use, Subscription_Length, and Charge Amount also exhibit meaningful relationships with churn.
 
 ## Box Plot Analysis
-- Customers who complained (Complains = 1) have a higher chance of churn.
+- Customers who complained (Complains >= 1) have a higher chance of churn.
 - Higher Customer_Value is associated with lower churn.
 - Lower Seconds_of_Use and Subscription_Length indicate a higher likelihood of churn.
 - Charge Amount shows significant variation but no clear trend.
 
-Subscription Length vs. Churn
+## Subscription Length vs. Churn
 - Churned customers tend to have shorter subscription lengths, whereas customers with longer subscriptions are more likely to stay.
 
 ## Key Takeaways for Churn Prediction
@@ -209,90 +209,77 @@ Trained following models:
 - SVM	                              531	                         0                  	62	                      37
 - KNN	                              518	                        13	                  51	                      48
 
-
-
 ### Key Observations:
 
-- Best model: Based on ROC-AUC & F1-Score, the top-performing model was chosen.
-- Best Model for Accuracy: Random Forest and Gradient Boosting, both with an accuracy of 0.95.
-- Best Model for AUC: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
-- Precision (Class 0): Random Forest and Gradient Boosting show the highest precision for class 0, at 0.96 and 0.96, respectively.
-- Recall (Class 1): Logistic Regression has the lowest recall for class 1 (0.41), while Random Forest, Gradient Boosting, and SVM are better at capturing class 1 instances, with recall values of 0.78, 0.77, and 0.37, respectively.
-- F1-score (Class 0): Both Random Forest and Gradient Boosting show high F1-scores for class 0 (0.97), indicating a good balance between precision and recall.
-- Confusion Matrix: The confusion matrices indicate that models like Random Forest and Gradient Boosting have fewer false positives (class 0 predicted as 1), with SVM and KNN showing more false negatives for class 1.
-- KNN's recall scores misses majority of actual churners, it is considered riskier for business.
-- #### Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
+Top-performing model was chosen Best model based on ROC-AUC & F1-Score.
 
-#### Class Imbalance Impact:
-- High accuracy scores (~80%) despite modest recall for churn class
-- Precision-Recall tradeoff evident (e.g., Random Forest has 82% precision but 76% recall)
-#### Best Overall Performer:
-- Random Forest dominates across metrics:
-- 88% AUC (best discriminative power)
-- 79% F1-Score (best balance of precision/recall)
-#### SVM Limitations:
-- Lowest churn recall (65%) due to sensitivity to class imbalance
-#### Practical Consideration:
-- KNN's 62% recall means it misses 38% of actual churners - riskiest for business
+- **Best Model for Accuracy**: Random Forest and Gradient Boosting, both with an accuracy of 0.95.
+- **Best Model for AUC**: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
+- **Precision** (Class 0): Random Forest and Gradient Boosting showed the highest precision for class 0, at 0.96 and 0.96, respectively.
+- **Recall (Class 1)**: Logistic Regression has the lowest recall for class 1 (0.41), while Random Forest, Gradient Boosting, and SVM are better at capturing class 1 instances, with recall values of 0.78, 0.77, and 0.37, respectively.
+- **F1-score (Class 0)**: Both Random Forest and Gradient Boosting show high F1-scores for class 0 (0.97), indicating a good balance between precision and recall.
+- **Confusion Matrix**: The confusion matrices indicate that models like Random Forest and Gradient Boosting have fewer false positives (class 0 predicted as 1), with SVM and KNN showing more false negatives for class 1.
+- **KNN's recall scores misses majority of actual churners, it is considered riskier for business.**
+  
+- #### Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
 
 ## Hyperparameter Tuning
 Used GridSearchCV to fine-tune Random Forest parameters:
-
 - n_estimators: 50, 100, 200
 - max_depth: None, 10, 20
 - min_samples_split: 2, 5, 10
 - Found best-performing hyperparameters and re-trained the model.
 
 ## Key Insights
-Top churn predictors: Analyzing feature importance showed that variables like Call Duration, Complaint History, and Tariff Plan significantly impacted churn.
-SMOTE balancing improved recall, reducing false negatives (customers likely to churn).
-Next steps: Deploy model in a contact center CRM to predict churn and trigger proactive retention strategies.
+- Top churn predictors: Analyzing feature importance showed that variables like Call Duration, Complaint History, and Tariff Plan significantly impacted churn.
+- SMOTE balancing will improve recall, reducing false negatives (customers likely to churn).
+- Next steps: Deploy model in a contact center Customer Relationship Management (CRM) systems to predict churn and trigger proactive retention strategies.
 
 # Conclusion
 Top Features Impacting Churn
-- Call Failure: Higher call failures strongly correlated with churn (technical issues drive dissatisfaction).
-- Complains: Complaints were a direct indicator of dissatisfaction.
-- Usage Patterns: Low "Seconds of Use" or "Frequency of Use" signaled disengagement.
-- Customer Value: Lower-value customers were more likely to churn.
-- Subscription Length: Newer customers showed higher churn risk.
+- **Call Failure**: Higher call failures strongly correlated with churn (technical issues drive dissatisfaction).
+- **Complains**: Complaints were a direct indicator of dissatisfaction.
+- **Usage Patterns**: Low "Seconds of Use" or "Frequency of Use" signaled disengagement.
+- **Customer Value**: Lower-value customers were more likely to churn.
+- **Subscription Length**: Newer customers showed higher churn risk.
 
 # 3. Business Impact
-The model enables proactive retention strategies (e.g., targeted discounts for high-risk customers).
-Reducing churn by even 5% could save significant revenue for telecom companies.
+- The model enables proactive retention strategies (e.g., targeted discounts for high-risk customers).
+- Reducing churn by even 5% could save significant revenue for Contact Center Software as a Subscription companies (especially with thousands to millions of customers, and associated annual spend).
 
 # Next Steps & Recommendations
-1. Model Improvements
+**1. Model Improvements**
 Address Class Imbalance: Use SMOTE or ADASYN to handle class imbalance and improve minority class prediction.
 Feature Engineering: Create interaction terms (e.g., "Call Failure per Usage") or temporal features.
 Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance.
 
-2. Deployment Strategies
-Real-Time Integration: Embed the model into CRM systems to flag high-risk customers during service calls.
-Automated Alerts: Trigger automated retention offers (e.g., free data packs) via email/SMS for predicted churners.
+**2. Deployment Strategies (for Customer Retention, Reactive >> Proactive apprach)**
+- Real-Time Integration: Embed the model into Customer Relationship Management (CRM) systems systems to flag high-risk customers during service calls.
+- Reactive to Preemptive/Proactive approach: Leverage the prediction insights to drive Proactive/Preemptive "Next best" customer interactions to avoid churn rather than a reactive approach.
+- Automated Alerts: Trigger automated retention offers and/or assign Customer Success Managers, Customer Success Specialists to key accounts/regions which have predicted churners. Leverage Email/Chat/Outbound call campaigns for proactive value delivery and customer intimacy, retention.
 
-3. Ethical Considerations
+**4. Ethical Considerations**
 Bias Mitigation: Audit the model for fairness across demographics (e.g., age groups or regions).
 Transparency: Use SHAP/LIME to explain predictions to customers and build trust.
 
-4. A/B Testing
-Test retention strategies on a subset of high-risk customers and measure churn reduction compared to a control group.
+**5. A/B Testing**
+Test retention strategies on a subset of high-risk customers and measure churn reduction compared to a controlled group.
 
-5. Continuous Monitoring
+**6. Continuous Monitoring**
 Retrain the model quarterly with fresh data to adapt to changing customer behavior.
-Track feature importance shifts over time (e.g., new pain points like network outages).
+Retrain the model for seasonal data as well and for specific industries (for eg., for Healthcare customer buying SaaS subcriptions, do model training during Open Enrollment phase of the year, for retail customer during Thanksgiving, Christmas time et al)
+Track feature importance shifts over time (e.g., new pain points like "low adoption", "not signing up for new features", "customer stuck in a specific lifecycle" and not progressing to take best benefits of the subscription).
 
-Final Recommendation: Prioritize fixing technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
+**Final Recommendation:** Prioritize fixing technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
 
-# Additional Details 
+# Additional considerations may also include 
 - Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if you can squeeze out better performance
 - Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable.
 - Polynomial Features: Consider adding polynomial features to capture non-linear relationships.
-Feature Selection/Dimensionality Reduction:
-- Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
-- PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
+- Feature Selection/Dimensionality Reduction:
+  - Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
+  - PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
 - Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
-- A/B Testing: Once you have a refined model, perform A/B testing on a small segment of your customer base to compare the performance of ML(LR) model-driven marketing strategy against your current approach.
-- Monitoring: Continuously monitor the performance of the model in a production environment and retrain it periodically with new data to maintain its accuracy and relevance.
 
 # Plots
 
