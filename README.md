@@ -127,7 +127,7 @@ Target Variable
 - Converted categorical features (e.g., Tariff_1, Status) into ML friendly formats.
 
 # Exploratory Data Analysis (EDA) Summary
-Refer to the Capston_CC_Churn_Plots_v1 for detailed analysis.
+Refer to the Capston_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis.
 
 ## Churn Distribution
 The dataset is imbalanced, with significantly more non-churned customers (Churn = 0) compared to churned customers (Churn = 1).
@@ -289,7 +289,7 @@ Track feature importance shifts over time (e.g., new pain points like "low adopt
 - Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
 
 # Plots
-
+https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf
 
 # Files
 - SiddiCC_Churn.ipynb - Jupyter notebook
