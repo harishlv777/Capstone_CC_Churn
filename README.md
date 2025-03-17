@@ -288,6 +288,17 @@ Track feature importance shifts over time (e.g., new pain points like "low adopt
   - PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
 - Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
 
+# Additional Findings with XGBoost
+In addition to the above, performed Extreme Gradient Boosting classifier based analysis. Refer to the https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf to review XGBoost classifier performance before and after hyperparameter tuning. 
+
+## Key Takeaways
+•	The XGBoost model performs well initially but shows bias toward the majority class.
+•	Hyperparameter tuning significantly improves the model's performance, particularly for the minority class, as seen in better precision, recall, and fewer misclassifications.
+•	The tuned model is more balanced and effective at distinguishing between the two classes while maintaining high overall accuracy and AUC.
+
+## SHAP Interpretation
+I tried to perform SHAP based interpretation to gain deeper insights into the decision-making process of  XGBoost model, helping validate its reliability and interpretability. However, I wasn’t able to execute SHAP due to shortage of compute resources on my laptop. I will look at leveraging SHAP for my future analysis
+
 # Plots
 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf
 
