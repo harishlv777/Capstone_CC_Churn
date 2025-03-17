@@ -291,10 +291,38 @@ Track feature importance shifts over time (e.g., new pain points like "low adopt
 # Additional Findings with XGBoost
 In addition to the above, performed Extreme Gradient Boosting classifier based analysis. Refer to the https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf to review XGBoost classifier performance before and after hyperparameter tuning. 
 
+## 1. Initial Model Performance
+   - Accuracy: 94.76% (indicates the overall correctness of predictions).
+   - AUC (Area Under the Curve): 0.9793 (shows high discrimination ability between classes).
+   - Precision, Recall, F1-Score:
+     - Class 0 (majority class): High precision (0.96), recall (0.98), and F1-score (0.97).
+     - Class 1 (minority class): Lower precision (0.88), recall (0.77), and F1-score (0.82), indicating some difficulty in correctly identifying minority class
+       instances.
+   - Confusion Matrix:
+     - True Negatives (TN): 521
+     - False Positives (FP): 10
+     - False Negatives (FN): 23
+     - True Positives (TP): 76
+     - The model misclassifies some instances, especially for Class 1.
+
+## 2. Tuned Model Performance
+   -  After hyperparameter tuning with parameters like learning_rate=0.1, max_depth=7, n_estimators=200, and subsample=0.8:
+   -  Accuracy: Improved to 96.83%.
+   -  AUC: Increased to 0.9866, indicating better class separation.
+   -  Precision, Recall, F1-Score:
+     - Class 0: Precision, recall, and F1-score improved slightly.
+     - Class 1: Significant improvement in precision (0.92), recall (0.87), and F1-score (0.90), reflecting better handling of the minority class.
+   - Confusion Matrix:
+     - TN: 524
+     - FP: 7
+     - FN: 13
+     - TP: 86
+     - The number of misclassifications decreased for both classes.
+
 ## Key Takeaways
-•	The XGBoost model performs well initially but shows bias toward the majority class.
-•	Hyperparameter tuning significantly improves the model's performance, particularly for the minority class, as seen in better precision, recall, and fewer misclassifications.
-•	The tuned model is more balanced and effective at distinguishing between the two classes while maintaining high overall accuracy and AUC.
+- The XGBoost model performs well initially but shows bias toward the majority class.
+- Hyperparameter tuning significantly improves the model's performance, particularly for the minority class, as seen in better precision, recall, and fewer misclassifications.
+- The tuned model is more balanced and effective at distinguishing between the two classes while maintaining high overall accuracy and AUC.
 
 ## SHAP Interpretation
 I tried to perform SHAP based interpretation to gain deeper insights into the decision-making process of  XGBoost model, helping validate its reliability and interpretability. However, I wasn’t able to execute SHAP due to shortage of compute resources on my laptop. I will look at leveraging SHAP for my future analysis
