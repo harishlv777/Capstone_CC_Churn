@@ -84,7 +84,7 @@ The dataset consists of 3,150 records and 25 features, covering various aspects 
 - Churn is the primary target variable for prediction.
 - Features like Sentiment_Score, First Call Resolution (FCR), Service_Gap, and Complexity_Score may provide strong insights into customer dissatisfaction.
 
-## Next Steps:
+## Data Understanding summary
 - Checked for class imbalance in the Churn column.
 - Analyzed feature distributions (e.g., correlation between features and churn).
 - Feature engineering (e.g., converting categorical variables, creating new derived features).
@@ -119,7 +119,7 @@ The dataset consists of 3,150 records and 25 features, covering various aspects 
   - Churn (495 outliers)
   - Some features like AHT, FCR, Sentiment_Score, and SLA_Compliance do not have outliers.
 
-## Next Steps
+## Data Preparation Summary
 - Handled class imbalance (oversampling, undersampling, or class weights).
 - Removed or cap outliers to prevent them from skewing the model.
 - Feature selection was performed based on correlation analysis.
