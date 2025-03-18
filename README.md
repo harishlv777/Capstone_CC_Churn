@@ -289,9 +289,46 @@ Track feature importance shifts over time (e.g., new pain points like "low adopt
 - Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
 
 # Additional Findings with XGBoost
+In addition to the above, performed Extreme Gradient Boosting classifier based analysis. Listed below are the XGBoost classifier before and after hyperparameter tuning.
+XGBoost model performed exceptionally well with high accuracy (97%), precision (91%), and an outstanding AUC score (0.99). It effectively identifies most churners while keeping false alarms low. However, addressing false negatives could further enhance its ability to detect all potential churners, making it even more robust for real-world applications like customer retention strategies.
+
+## 1. Performance Metrics
+•	Accuracy: 0.97 (97%) The model correctly classifies 97% of all predictions, indicating high overall performance.
+•	Precision: 0.91 (91%) Among all instances predicted as "Churn," 91% are actual churners. This shows the model has a low false positive rate.
+•	Recall: 0.87 (87%) The model identifies 87% of actual churners, meaning it performs well in detecting churn but misses some cases (false negatives).
+•	F1 Score: 0.89 The F1 score balances precision and recall, showing the model is well-rounded in handling both false positives and false negatives.
+•	ROC AUC Score: 0.99 A near-perfect score of 0.99 indicates excellent separability between the "Churn" and "No Churn" classes.
+
+## 2. Confusion Matrix
+The confusion matrix provides a breakdown of predictions:
+•	True Negatives (523): The model correctly predicts "No Churn" for 523 customers.
+•	False Positives (8): Only 8 customers were incorrectly predicted as "Churn" when they did not churn.
+•	False Negatives (13): The model misses 13 actual churners, predicting them as "No Churn."
+•	True Positives (86): The model correctly identifies 86 customers who actually churned.
+Insights:
+•	The model performs exceptionally well in predicting "No Churn" cases, with only a small number of false positives.
+•	While recall is strong at 87%, the false negatives (13) suggest there is room for improvement in capturing all churners.
+
+## 3. ROC Curve
+The ROC curve evaluates the trade-off between the true positive rate (recall) and the false positive rate:
+•	The curve is very close to the top-left corner, indicating excellent performance.
+•	AUC = 0.99 confirms that the model has near-perfect discrimination between the two classes.
+Insights:
+•	The high AUC value reflects that the model is highly effective at distinguishing between churners and non-churners across different thresholds.
+
+## Key Strengths of XGBoost
+1.	High Accuracy: The model achieves an impressive accuracy of 97%, making it reliable for most predictions.
+2.	Strong Precision: With a precision of 91%, it minimizes false positives, which is crucial for avoiding unnecessary interventions for non-churning customers.
+3.	Excellent AUC: The high AUC score demonstrates that the model effectively separates churners from non-churners.
+
+## Areas for Improvement
+1.	False Negatives: While recall is strong, reducing the number of false negatives (13) would further improve the model's ability to capture all churners.
+1.	Possible actions: Adjusting decision thresholds or using techniques like oversampling/undersampling to handle class imbalance if present.
+2.	Class Imbalance Check: If churn cases are significantly fewer than non-churn cases, consider rebalancing the dataset to ensure better recall without sacrificing precision.
+
 In addition to the above, performed Extreme Gradient Boosting classifier based analysis. Refer to the https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf to review XGBoost classifier performance before and after hyperparameter tuning. 
 
-## 1. Initial Model Performance
+### 1. Initial Model Performance
    - Accuracy: 94.76% (indicates the overall correctness of predictions).
    - AUC (Area Under the Curve): 0.9793 (shows high discrimination ability between classes).
    - Precision, Recall, F1-Score:
@@ -305,7 +342,7 @@ In addition to the above, performed Extreme Gradient Boosting classifier based a
      - True Positives (TP): 76
      - The model misclassifies some instances, especially for Class 1.
 
-## 2. Tuned Model Performance
+### 2. Tuned Model Performance
    -  After hyperparameter tuning with parameters like learning_rate=0.1, max_depth=7, n_estimators=200, and subsample=0.8:
    -  Accuracy: Improved to 96.83%.
    -  AUC: Increased to 0.9866, indicating better class separation.
@@ -319,13 +356,39 @@ In addition to the above, performed Extreme Gradient Boosting classifier based a
      - TP: 86
      - The number of misclassifications decreased for both classes.
 
-## Key Takeaways
+## XGBoost Key Takeaways
 - The XGBoost model performs well initially but shows bias toward the majority class.
 - Hyperparameter tuning significantly improves the model's performance, particularly for the minority class, as seen in better precision, recall, and fewer misclassifications.
 - The tuned model is more balanced and effective at distinguishing between the two classes while maintaining high overall accuracy and AUC.
 
 ## SHAP Interpretation
-I tried to perform SHAP based interpretation to gain deeper insights into the decision-making process of  XGBoost model, helping validate its reliability and interpretability. However, I wasn’t able to execute SHAP due to shortage of compute resources on my laptop. I will look at leveraging SHAP for my future analysis
+SHAP based interpretation is performed to gain deeper insights into the decision-making process of  XGBoost model, helping validate its reliability and interpretability. 
+The SHAP plot reveals that customer usage metrics (Status, Frequency_of_Use) and service quality indicators (Call Failure, Complains) are the most influential features in the model's predictions. These insights can guide targeted interventions, such as improving service reliability or addressing complaints to enhance predictive accuracy and customer satisfaction.
+
+This SHAP (SHapley Additive Explanations) summary plot https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf shows how each feature impacts the model's predictions.
+- x-axis (Impact on Model Output)
+- Negative values decrease the likelihood of churn.
+- Positive values increase the likelihood of churn.
+- y-axis (Model Features)
+- The order of the features on the Y-axis is based on overall importance.
+- Color (Feature Value Intensity)
+- Blue indicates lower feature values.
+- Red indicates higher feature values.
+
+## SHAP Key Insights
+•	Features at the top of the plot have the highest impact on the model's predictions, while those at the bottom contribute less.
+•	Top Impactful features
+o	Status: This feature has the most significant influence, with a wide range of SHAP values indicating strong predictive power.
+o	Frequency_of_Use and Seconds_of_Use: These usage-related metrics also play critical roles in determining predictions.
+o	Call Failure and Usage_per_Sub_Day: Indicators of service quality and usage patterns are highly relevant.
+•	Lesser Impactful features
+o	Features like Age_30 and Callback_Count, located near the bottom, have minimal influence on predictions. These might be less relevant for decision-making or could be candidates for removal during feature selection.
+•	In Status, higher values (red) are associated with positive impacts on predictions, while lower values (blue) contribute negatively.
+•	In Complains, higher values (red) negatively impact predictions, suggesting that more complaints correlate with unfavorable outcomes.
+•	Wider distributions of SHAP values for features like Status and Frequency_of_Use indicate variability in their influence across different samples.
+•	Narrower distributions for features like Age_Group_Numeric suggest consistent but less impactful contributions.
+•	Features related to customer usage patterns (Frequency_of_Use, Seconds_of_Use) are critical for understanding customer behavior.
+•	Service quality metrics (Call Failure, Complains) are key drivers for predicting outcomes, emphasizing their importance in improving customer satisfaction.
 
 # Plots
 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf
@@ -341,6 +404,7 @@ https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Chu
 - Python 3.x, pandas, numby, matplotlib, seaborn, scikit-learn Note
 - plot_helpers is required to render_plot
 - Run pip list | grep plot_helpers to check if plot_helpers exists. If missing, either install it or replace render_plot with Matplotlib/Seaborn functions
+- SHAP library for model interpretation
 
 # How to execute
 - Clone the repository
