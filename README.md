@@ -43,6 +43,8 @@ Several challenges may impact the project's scope and execution:
 - Computational Resources – Running machine learning models on large datasets may require high processing power.
 - Interpretability – Ensuring the model is explainable for business stakeholders to act on insights effectively.
 
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
+
 # 2. Data Understanding
 Data source: "data/SiddiCC_Churn_data.csv" containing customer data
 The dataset consists of 3,150 records and 25 features, covering various aspects of customer behavior, usage, and interactions with the contact center.
@@ -90,7 +92,7 @@ The dataset consists of 3,150 records and 25 features, covering various aspects 
 - Analyzed feature distributions (e.g., correlation between features and churn).
 - Feature engineering (e.g., converting categorical variables, creating new derived features).
 - Outlier detection to identify potential anomalies in the data.
-
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
 # 3. Data Preparation
 
 ## 1. Class Imbalance in Churn
@@ -126,8 +128,8 @@ The dataset consists of 3,150 records and 25 features, covering various aspects 
 - Feature selection was performed based on correlation analysis.
 - Scaled numerical features (normalization or standardization).
 - Converted categorical features (e.g., Tariff_1, Status) into ML friendly formats.
-
-# Exploratory Data Analysis (EDA) Summary
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
+# 4. Exploratory Data Analysis (EDA) Summary
 Refer to the Capstone_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis.
 
 ## Churn Distribution
@@ -154,8 +156,8 @@ The dataset is imbalanced, with significantly more non-churned customers (Churn 
 - Handling class imbalance is crucial for accurate modeling.
 - Feature engineering can enhance predictive power (e.g., engagement metrics, sentiment analysis).
 - There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use a program
-
-# Model Development
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
+# 5. Model Development
 ## 1. Data Preprocessing
 - Encoded categorical variables (e.g., Status, Tariff Plan).
 - Normalized numerical features using StandardScaler.
@@ -172,10 +174,10 @@ Trained following models:
 
 ## Best Model: 
 - Random Forest or Gradient Boosting typically outperformed other models (like Logistic Regression, SVM, or KNN) in terms of AUC-ROC (e.g., ~0.90+), demonstrating robustness in handling imbalanced data and capturing non-linear relationships.
-
 - Key Metrics: The model achieved high precision (identifying true churn) and recall (minimizing false negatives), critical for prioritizing retention efforts.
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
 
-## Model Performance Metrics
+# 6. Model Evalaution & Performance Metrics
 ### Model Performance (Accuracy & AUC)
 - Model	              Accuracy	AUC
 - Logistic Regression	0.90	    0.92
@@ -215,11 +217,11 @@ Trained following models:
 - Gradient Boosting	                521	                        10	                  23	                      76
 - SVM	                              531	                         0                  	62	                      37
 - KNN	                              518	                        13	                  51	                      48
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
 
+# 7 Best Model and Deployment
 ### Key Observations:
-
 Top-performing model was chosen Best model based on ROC-AUC & F1-Score.
-
 - **Best Model for Accuracy**: Random Forest and Gradient Boosting, both with an accuracy of 0.95.
 - **Best Model for AUC**: Random Forest (0.99) performs the best for AUC, closely followed by Logistic Regression (0.92).
 - **Precision** (Class 0): Random Forest and Gradient Boosting showed the highest precision for class 0, at 0.96 and 0.96, respectively.
@@ -241,8 +243,8 @@ Used GridSearchCV to fine-tune Random Forest parameters:
 - Top churn predictors: Analyzing feature importance showed that variables like Call Duration, Complaint History, and Tariff Plan significantly impacted churn.
 - SMOTE balancing will improve recall, reducing false negatives (customers likely to churn).
 - Next steps: Deploy model in a contact center Customer Relationship Management (CRM) systems to predict churn and trigger proactive retention strategies.
-
-# Conclusion
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
+# 8. Feature Importance & Conclusion
 Top Features Impacting Churn
 - **Status**: Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0. It would be good to target the customers with basic subscription plans through campaigns, dedicated customer success managers, discounts, trial  to uplift them to premium subscription with value added features. There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use subscription programs
 - **Call Failure**: Higher call failures strongly correlated with churn (technical issues drive dissatisfaction).
@@ -254,12 +256,13 @@ Top Features Impacting Churn
 # 3. Business Impact
 - The model enables proactive retention strategies (e.g., targeted discounts for high-risk customers).
 - Reducing churn by even 5% could save significant revenue for Contact Center Software as a Subscription companies (especially with thousands to millions of customers, and associated annual spend).
-
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
 # Next Steps & Recommendations
 **1. Model Improvements**
 Address Class Imbalance: Use SMOTE or ADASYN to handle class imbalance and improve minority class prediction.
 Feature Engineering: Create interaction terms (e.g., "Call Failure per Usage") or temporal features.
-Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance.
+Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance. 
+**Completed Experimentation with XGBoost and shared results with SHAP Interpretation. Refer the Appendix section)** 
 
 **2. Deployment Strategies (for Customer Retention, Reactive >> Proactive apprach)**
 - Real-Time Integration: Embed the model into Customer Relationship Management (CRM) systems systems to flag high-risk customers during service calls.
@@ -280,6 +283,8 @@ Track feature importance shifts over time (e.g., new pain points like "low adopt
 
 **Final Recommendation:** Prioritize campaigns to take care of "Basic subscription (base plan)" customers, have a dedicated customer success manager, proactive outbound campaign, discounts to uplift the customer from basic subscription to enhanced/premium subscriptions. Solve for technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
 
+Use XGBoost modeling to perform initial controlled environment/production trials, leverage SHAP to interpret best perfoming model results, derive business insights and suggest next best actions. Refer to additional experimentation and analysis of XGBoost outperformed and SHAP implementation provide key insights on model interpretation and performance as indicated in overall summary and plots. 
+
 # Additional considerations may also include 
 - Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if you can squeeze out better performance
 - Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable.
@@ -288,8 +293,10 @@ Track feature importance shifts over time (e.g., new pain points like "low adopt
   - Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
   - PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
 - Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
+## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
+# APPENDIX: Experimentation with XGBoost and SHAP Interpretation
 
-# Additional Findings with XGBoost (Based on Capstone project review with Learning Facilitator)
+## Additional Findings with XGBoost (Based on Capstone project review with Learning Facilitator)
 In addition to the above, performed Extreme Gradient Boosting classifier based analysis. Listed below are the XGBoost classifier before and after hyperparameter tuning.
 XGBoost model performed exceptionally well with high accuracy (97%), precision (91%), and an outstanding AUC score (0.99). It effectively identifies most churners while keeping false alarms low. However, addressing false negatives could further enhance its ability to detect all potential churners, making it even more robust for real-world applications like customer retention strategies.
 
