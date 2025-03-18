@@ -1,4 +1,5 @@
 # Capstone_ContactCenter_Churn for Software as a Subscription (SaaS) Business
+## Prediction of Churn in SaaS business using Contact Center data and Machine Learning models.
 
 "In today's subscription-based economy, high customer churn poses a significant threat to enterprises and service providers. This capstone project tackles this critical challenge by leveraging machine learning to predict customer churn risk within a contact center. By analyzing data encompassing customer interactions, agent performance, and demographic factors, the project aims to develop a predictive model capable of identifying customers at high risk of churn. This model will empower contact centers to proactively implement targeted retention strategies, ultimately boosting customer satisfaction and minimizing revenue attrition.
 
@@ -134,7 +135,7 @@ The dataset is imbalanced, with significantly more non-churned customers (Churn 
 -  Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0.
 -  It would be good to target the customers with basic subscription plans through campaigns, dedicated customer success managers, discounts, trial  to uplift them to premium subscription with value added features.
 -  There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use subscription programs
-- 
+  
 ## Correlation Heatmap
 - Complains and Customer_Value show strong correlation with Churn.
 - Features like Seconds_of_Use, Subscription_Length, and Charge Amount also exhibit meaningful relationships with churn.
@@ -376,19 +377,19 @@ This SHAP (SHapley Additive Explanations) summary plot https://github.com/harish
 - Red indicates higher feature values.
 
 ## SHAP Key Insights
-•	Features at the top of the plot have the highest impact on the model's predictions, while those at the bottom contribute less.
-•	Top Impactful features
-o	Status: This feature has the most significant influence, with a wide range of SHAP values indicating strong predictive power.
-o	Frequency_of_Use and Seconds_of_Use: These usage-related metrics also play critical roles in determining predictions.
-o	Call Failure and Usage_per_Sub_Day: Indicators of service quality and usage patterns are highly relevant.
-•	Lesser Impactful features
-o	Features like Age_30 and Callback_Count, located near the bottom, have minimal influence on predictions. These might be less relevant for decision-making or could be candidates for removal during feature selection.
-•	In Status, higher values (red) are associated with positive impacts on predictions, while lower values (blue) contribute negatively.
-•	In Complains, higher values (red) negatively impact predictions, suggesting that more complaints correlate with unfavorable outcomes.
-•	Wider distributions of SHAP values for features like Status and Frequency_of_Use indicate variability in their influence across different samples.
-•	Narrower distributions for features like Age_Group_Numeric suggest consistent but less impactful contributions.
-•	Features related to customer usage patterns (Frequency_of_Use, Seconds_of_Use) are critical for understanding customer behavior.
-•	Service quality metrics (Call Failure, Complains) are key drivers for predicting outcomes, emphasizing their importance in improving customer satisfaction.
+- Features at the top of the plot have the highest impact on the model's predictions, while those at the bottom contribute less.
+- Top Impactful features
+  - Status: This feature has the most significant influence, with a wide range of SHAP values indicating strong predictive power.
+  - Frequency_of_Use and Seconds_of_Use: These usage-related metrics also play critical roles in determining predictions.
+  - Call Failure and Usage_per_Sub_Day: Indicators of service quality and usage patterns are highly relevant.
+- Lesser Impactful features
+  - Features like Age_30 and Callback_Count, located near the bottom, have minimal influence on predictions. These might be less relevant for decision-making or could be candidates for removal during feature selection.
+- In Status, higher values (red) are associated with positive impacts on predictions, while lower values (blue) contribute negatively.
+- In Complains, higher values (red) negatively impact predictions, suggesting that more complaints correlate with unfavorable outcomes.
+- Wider distributions of SHAP values for features like Status and Frequency_of_Use indicate variability in their influence across different samples.
+- Narrower distributions for features like Age_Group_Numeric suggest consistent but less impactful contributions.
+- Features related to customer usage patterns (Frequency_of_Use, Seconds_of_Use) are critical for understanding customer behavior.
+- Service quality metrics (Call Failure, Complains) are key drivers for predicting outcomes, emphasizing their importance in improving customer satisfaction.
 
 # Plots
 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf
