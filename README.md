@@ -40,10 +40,10 @@ By proactively identifying at-risk customers, businesses can implement targeted 
 Several challenges may impact the project's scope and execution:
 - Data Availability – Access to comprehensive and high-quality customer interaction, agent performance and contact center data may be limited. Contact Center data consisting of 3K+ records was considered.
 - Time Constraints – Model development, testing, and validation is critical given realtime nature of contact center and as-a-subscription business
-- Computational Resources – Running machine learning models on large datasets may require high processing power.
+- Computational Resources – Running machine learning models on large datasets may require high computing power and associated costs/overheads.
 - Interpretability – Ensuring the model is explainable for business stakeholders to act on insights effectively.
 
-## ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ## 
+## ------------------------------------------------------------------------------------------------------------------------------------------------ ## 
 
 # 2. Data Understanding
 Data source: "data/SiddiCC_Churn_data.csv" containing customer data
