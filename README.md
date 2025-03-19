@@ -285,7 +285,7 @@ Top-performing model was chosen Best model based on ROC-AUC & F1-Score.
 - **Confusion Matrix**: The confusion matrices indicate that models like Random Forest and Gradient Boosting have fewer false positives (class 0 predicted as 1), with SVM and KNN showing more false negatives for class 1.
 - **KNN's recall scores misses majority of actual churners, it is considered riskier for business.**
   
-- #### Overall, Random Forest stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
+- #### Overall, Random Forest, XGBoost stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
 
 ## Hyperparameter Tuning
 Used GridSearchCV to fine-tune Random Forest parameters:
