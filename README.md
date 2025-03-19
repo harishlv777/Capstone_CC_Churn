@@ -8,11 +8,12 @@ https://github.com/harishlv777/Capstone_CC_Churn/blob/main/Capstone%20Project_Fi
 - Data Preprocessing/Preparation
 - Modeling
 - Modeling Evaluation
-- Capstone_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blo
-b/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis
+- Capstone_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis
 - Appendix
    - Experimentation with XGBoost and SHAP Interpretation
    - Non technical report
+
+README Contents
 
 ## Executive Summary
 "In today's subscription-based economy, high customer churn poses a significant threat to enterprises and service providers. This capstone project tackles this critical challenge by leveraging machine learning to predict customer churn risk within a contact center. By analyzing data encompassing customer interactions, agent performance, and demographic factors, the project aims to develop a predictive model capable of identifying customers at high risk of churn. This model will empower contact centers to proactively implement targeted retention strategies, ultimately boosting customer satisfaction and minimizing revenue attrition.
