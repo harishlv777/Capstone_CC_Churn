@@ -38,26 +38,27 @@ Key highlights include:
 - Subscription Length: Newer customers showed higher churn risk
 
 ## Recommendations
-1.	Upgrade Basic Subscriptions: Target customers with basic plans through:
+- Upgrade Basic Subscriptions: Target customers with basic plans through:
    - Personalized campaigns
    - Dedicated customer success managers
    - Discounts or trials for premium features
-2.	Improve Technical Quality: Reduce call failures to decrease dissatisfaction
-3.	Proactive Outreach: Use the predictive model to identify at-risk customers and intervene early
-4.	Enhance Customer Value: Develop strategies to increase usage and subscription length
-5.	Streamline Complaint Resolution: Implement efficient processes to address and resolve customer complaints quickly
+- Improve Technical Quality: Reduce call failures to decrease dissatisfaction
+- Proactive Outreach: Use the predictive model to identify at-risk customers and intervene early
+- Enhance Customer Value: Develop strategies to increase usage and subscription length
+- Streamline Complaint Resolution: Implement efficient processes to address and resolve customer complaints quickly
 
 ## Implementation
-1.	Integrate the predictive model into the contact center's Customer Relationship Management (CRM) system
-2.	Train customer service representatives to use model insights for personalized interactions
-3.	Develop automated triggers for proactive retention strategies based on churn risk predictions
-4.	Regularly update and refine the model with new data to maintain accuracy
+- Integrate the predictive model into the contact center's Customer Relationship Management (CRM) system
+- Train customer service representatives to use model insights for personalized interactions
+- Develop automated triggers for proactive retention strategies based on churn risk predictions
+- Regularly update and refine the model with new data to maintain accuracy
 
 ## Expected Outcomes
-•	Reduction in overall churn rate
-•	Increased customer retention and lifetime value
-•	Improved operational efficiency in the contact center
-•	Enhanced customer satisfaction and loyalty
+- Reduction in overall churn rate
+- Increased customer retention and lifetime value
+- Improved operational efficiency in the contact center
+- Enhanced customer satisfaction and loyalty
+
 By combining Model performance data, AI/ML customer insights, and proactive outreach, businesses can retain more customers, improve loyalty, and increase profitability. This ML based data-driven approach ensures that businesses stay ahead of churn before it becomes a problem.
 ## ---------------------------------------------------------------------------------------------- ## 
 # Final Report (Detailed)
