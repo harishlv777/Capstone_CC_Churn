@@ -260,7 +260,7 @@ Top Features Impacting Churn
 - Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance. 
 - **Completed Experimentation with XGBoost and shared results with SHAP Interpretation. Refer the Appendix section)** 
 
-**2. Deployment Strategies (for Customer Retention, Reactive >> Proactive apprach)**
+**2. Deployment Strategies (for Customer Retention, Reactive >> Proactive approach)**
 - Real-Time Integration: Embed the model into Customer Relationship Management (CRM) systems systems to flag high-risk customers during service calls.
 - Reactive to Preemptive/Proactive approach: Leverage the prediction insights to drive Proactive/Preemptive "Next best" customer interactions to avoid churn rather than a reactive approach.
 - Automated Alerts: Trigger automated retention offers and/or assign Customer Success Managers, Customer Success Specialists to key accounts/regions which have predicted churners. Leverage Email/Chat/Outbound call campaigns for proactive value delivery and customer intimacy, retention.
