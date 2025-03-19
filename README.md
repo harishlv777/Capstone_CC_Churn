@@ -101,7 +101,7 @@ Several challenges may impact the project's scope and execution:
 - Time Constraints – Model development, testing, and validation is critical given realtime nature of contact center and as-a-subscription business
 - Computational Resources – Running machine learning models on large datasets may require high computing power and associated costs/overheads.
 - Interpretability – Ensuring the model is explainable for business stakeholders to act on insights effectively.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 2. Data Understanding
 Data source: "data/SiddiCC_Churn_data.csv" containing customer data.
 
@@ -150,7 +150,7 @@ The dataset consists of 3,150 records and 25 features, covering various aspects 
 - Analyzed feature distributions (e.g., correlation between features and churn).
 - Feature engineering (e.g., converting categorical variables, creating new derived features).
 - Outlier detection to identify potential anomalies in the data.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 3. Data Preparation
 ## 1. Class Imbalance in Churn
 - 84.29% of customers did not churn (Churn = 0)
@@ -185,7 +185,7 @@ The dataset consists of 3,150 records and 25 features, covering various aspects 
 - Feature selection was performed based on correlation analysis.
 - Scaled numerical features (normalization or standardization).
 - Converted categorical features (e.g., Tariff_1, Status) into ML friendly formats.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 4. Exploratory Data Analysis (EDA) Summary
 Refer to the Capstone_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis.
 
@@ -213,7 +213,7 @@ The dataset is imbalanced, with significantly more non-churned customers (Churn 
 - Handling class imbalance is crucial for accurate modeling.
 - Feature engineering can enhance predictive power (e.g., engagement metrics, sentiment analysis).
 - There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use a program
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 5. Model Development
 ## 1. Data Preprocessing
 - Encoded categorical variables (e.g., Status, Tariff Plan).
@@ -232,7 +232,7 @@ Trained following models:
 ## Best Model: 
 - Random Forest or Gradient Boosting typically outperformed other models (like Logistic Regression, SVM, or KNN) in terms of AUC-ROC (e.g., ~0.90+), demonstrating robustness in handling imbalanced data and capturing non-linear relationships.
 - Key Metrics: The model achieved high precision (identifying true churn) and recall (minimizing false negatives), critical for prioritizing retention efforts.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 6. Model Evalaution & Performance Metrics
 ### Model Performance (Accuracy & AUC)
 - Model	              Accuracy	AUC
@@ -273,7 +273,7 @@ Trained following models:
 - Gradient Boosting	                521	                        10	                  23	                      76
 - SVM	                              531	                         0                  	62	                      37
 - KNN	                              518	                        13	                  51	                      48
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 7 Best Model and Deployment
 ### Key Observations:
 Top-performing model was chosen Best model based on ROC-AUC & F1-Score.
@@ -298,7 +298,7 @@ Used GridSearchCV to fine-tune Random Forest parameters:
 - Top churn predictors: Analyzing feature importance showed that variables like Call Duration, Complaint History, and Tariff Plan significantly impacted churn.
 - SMOTE balancing will improve recall, reducing false negatives (customers likely to churn).
 - Next steps: Deploy model in a contact center Customer Relationship Management (CRM) systems to predict churn and trigger proactive retention strategies.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # 8. Feature Importance & Conclusion
 Top Features Impacting Churn
 - **Status**: Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0. It would be good to target the customers with basic subscription plans through campaigns, dedicated customer success managers, discounts, trial  to uplift them to premium subscription with value added features. There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use subscription programs
@@ -311,7 +311,7 @@ Top Features Impacting Churn
 # Business Impact
 - The model enables proactive retention strategies (e.g., targeted discounts for high-risk customers).
 - Reducing churn by even 5% could save significant revenue for Contact Center Software as a Subscription companies (especially with thousands to millions of customers, and associated annual spend).
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # Next Steps & Recommendations
 **1. Model Improvements**
 - Address Class Imbalance: Use SMOTE or ADASYN to handle class imbalance and improve minority class prediction.
@@ -351,7 +351,7 @@ Top Features Impacting Churn
   - Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
   - PCA/Feature Importance: Use PCA or feature importance from a tree-based model (e.g., Random Forest) to select the most relevant features and reduce dimensionality.
 - Recommend incorporating external data sources (e.g., consumer behvior, churn due to price vs competition offers) to enrich contact center feature set
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 
 # APPENDIX: Experimentation with XGBoost and SHAP Interpretation
 
@@ -422,12 +422,12 @@ In addition to the above, performed Extreme Gradient Boosting classifier based a
      - FN: 13
      - TP: 86
      - The number of misclassifications decreased for both classes.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 ## XGBoost Key Takeaways
 - The XGBoost model performs well initially but shows bias toward the majority class.
 - Hyperparameter tuning significantly improves the model's performance, particularly for the minority class, as seen in better precision, recall, and fewer misclassifications.
 - The tuned model is more balanced and effective at distinguishing between the two classes while maintaining high overall accuracy and AUC.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 ## SHAP Interpretation
 SHAP based interpretation is performed to gain deeper insights into the decision-making process of  XGBoost model, helping validate its reliability and interpretability. 
 The SHAP plot reveals that customer usage metrics (Status, Frequency_of_Use) and service quality indicators (Call Failure, Complains) are the most influential features in the model's predictions. These insights can guide targeted interventions, such as improving service reliability or addressing complaints to enhance predictive accuracy and customer satisfaction.
@@ -456,24 +456,24 @@ This SHAP (SHapley Additive Explanations) summary plot https://github.com/harish
 - Narrower distributions for features like Age_Group_Numeric suggest consistent but less impactful contributions.
 - Features related to customer usage patterns (Frequency_of_Use, Seconds_of_Use) are critical for understanding customer behavior.
 - Service quality metrics (Call Failure, Complains) are key drivers for predicting outcomes, emphasizing their importance in improving customer satisfaction.
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # Plots
 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # Files
 - SiddiCC_Churn.ipynb - Jupyter notebook
 - data/SiddiCC_Churn_data.csv - Contact Center dataset
 - plots/Capstone_CC_Churn_plots.pdf - plots supporting the analysis
 - readings - CRISP-DM-BANK.pdf CRISP-DM methodology document
 - readme.md - current file
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # Requirements
 - Python 3.x, pandas, numby, matplotlib, seaborn, scikit-learn Note
 - plot_helpers is required to render_plot
 - Run pip list | grep plot_helpers to check if plot_helpers exists. If missing, either install it or replace render_plot with Matplotlib/Seaborn functions
 - SHAP library for model interpretation
-## ---------------------------------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # How to execute
 - Clone the repository
-- Build the environment with required packages, followed by Jypyter notebook execution.
-## ---------------------------------------------------------------------------------------------- ## 
+- Build the environment with required packages, followed by Jupyter notebook execution.
+## ---------------------------------------------------------------------------- ## 
