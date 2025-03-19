@@ -60,7 +60,7 @@ Key highlights include:
 - Enhanced customer satisfaction and loyalty
 
 By combining Model performance data, AI/ML customer insights, and proactive outreach, businesses can retain more customers, improve loyalty, and increase profitability. This ML based data-driven approach ensures that businesses stay ahead of churn before it becomes a problem.
-## ----------------------------------------------------------------------- ## 
+## ---------------------------------------------------------------------------- ## 
 # Final Report (Detailed)
 # 1. Business Understanding
 ### Churn 
