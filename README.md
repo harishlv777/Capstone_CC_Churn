@@ -9,10 +9,10 @@ https://github.com/harishlv777/Capstone_CC_Churn/blob/main/Capstone%20Project_Fi
 - Modeling
 - Modeling Evaluation
 - Capstone_CC_Churn_Plots_v1 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Churn_plots_v1.pdf for detailed analysis
-- Appendix
+- **Appendix** 
    - Experimentation with XGBoost and SHAP Interpretation
    - Non technical report
-
+## ---------------------------------------------------------------------------- ## 
 ## README
 
 ## Executive Summary
