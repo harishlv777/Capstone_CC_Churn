@@ -267,24 +267,26 @@ Top Features Impacting Churn
 - Automated Alerts: Trigger automated retention offers and/or assign Customer Success Managers, Customer Success Specialists to key accounts/regions which have predicted churners. Leverage Email/Chat/Outbound call campaigns for proactive value delivery and customer intimacy, retention.
 
 **3. Ethical Considerations**
-Bias Mitigation: Audit the model for fairness across demographics (e.g., age groups or regions).
-Transparency: Use SHAP/LIME to explain predictions to customers and build trust.
+- Bias Mitigation: Audit the model for fairness across demographics (e.g., age groups or regions).
+- Transparency: Use SHAP/LIME to explain predictions to customers and build trust.
+- Discuss and implement Responsible AI (RAI) framework to protect customer privacy data/assets.
 
 **4. A/B Testing**
-Test retention strategies on a subset of high-risk customers and measure churn reduction compared to a controlled group.
+- Test retention strategies on a subset of high-risk customers and measure churn reduction compared to a controlled group.
 
 **5. Continuous Monitoring**
-Retrain the model quarterly with fresh data to adapt to changing customer behavior.
-Retrain the model for seasonal data as well and for specific industries (for eg., for Healthcare customer buying SaaS subcriptions, do model training during Open Enrollment phase of the year, for retail customer during Thanksgiving, Christmas time et al)
-Track feature importance shifts over time (e.g., new pain points like "low adoption", "not signing up for new features", "customer stuck in a specific lifecycle" and not progressing to take best benefits of the subscription).
+- Retrain the model quarterly with fresh data to adapt to changing customer behavior.
+- Retrain the model for seasonal data as well and for specific industries (for eg., for Healthcare customer buying SaaS subcriptions, do model training during Open Enrollment phase of the year, for retail customer during Thanksgiving, Christmas time et al)
+- Track feature importance shifts over time (e.g., new pain points like "low adoption", "not signing up for new features", "customer stuck in a specific lifecycle" and not progressing to take best benefits of the subscription).
 
-**Final Recommendation:** Prioritize campaigns to take care of "Basic subscription (base plan)" customers, have a dedicated customer success manager, proactive outbound campaign, discounts to uplift the customer from basic subscription to enhanced/premium subscriptions. Solve for technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
-
-Use XGBoost modeling to perform initial controlled environment/production trials, leverage SHAP to interpret best perfoming model results, derive business insights and suggest next best actions. Refer to additional experimentation and analysis of XGBoost outperformed and SHAP implementation provide key insights on model interpretation and performance as indicated in overall summary and plots. 
+**Final Recommendation:** 
+- Prioritize campaigns to take care of "Basic subscription (base plan)" customers, have a dedicated customer success manager, proactive outbound campaign, discounts to uplift the customer from basic subscription to enhanced/premium subscriptions.
+- Solve for technical issues (call failures) and improving customer service (reducing complaints) while deploying the model to target at-risk customers. This holistic approach will maximize retention and profitability.
+- Use XGBoost modeling to perform initial controlled environment/production trials, leverage SHAP to interpret best perfoming model results, derive business insights and suggest next best actions. Refer to additional experimentation and analysis of XGBoost outperformed and SHAP implementation provide key insights on model interpretation and performance as indicated in overall summary and plots. 
 
 # Additional considerations may also include 
-- Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if you can squeeze out better performance
-- Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable.
+- Hyperparameter tuning - Further experimentation with hyperparameter tuning for all  models, particularly the Logistic Regression, to see if we can achieve better performance
+- Interaction Terms: Based on EDA (especially the correlations and bar charts), create interaction terms between features that seem to have a combined effect on the target variable. SHAP interpretation with all models will help here.
 - Polynomial Features: Consider adding polynomial features to capture non-linear relationships.
 - Feature Selection/Dimensionality Reduction:
   - Regularization: For Logistic Regression, experiment with L1 (Lasso) or L2 (Ridge) regularization to reduce overfitting and potentially improve generalization.
