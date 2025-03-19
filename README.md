@@ -248,7 +248,7 @@ Top Features Impacting Churn
 - **Customer Value**: Lower-value customers were more likely to churn.
 - **Subscription Length**: Newer customers showed higher churn risk.
 
-# 3. Business Impact
+# Business Impact
 - The model enables proactive retention strategies (e.g., targeted discounts for high-risk customers).
 - Reducing churn by even 5% could save significant revenue for Contact Center Software as a Subscription companies (especially with thousands to millions of customers, and associated annual spend).
 ## ---------------------------------------------------------------------------------------------- ## 
