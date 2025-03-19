@@ -255,9 +255,9 @@ Top Features Impacting Churn
 ## ---------------------------------------------------------------------------------------------- ## 
 # Next Steps & Recommendations
 **1. Model Improvements**
-Address Class Imbalance: Use SMOTE or ADASYN to handle class imbalance and improve minority class prediction.
-Feature Engineering: Create interaction terms (e.g., "Call Failure per Usage") or temporal features.
-Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance. 
+- Address Class Imbalance: Use SMOTE or ADASYN to handle class imbalance and improve minority class prediction.
+- Feature Engineering: Create interaction terms (e.g., "Call Failure per Usage") or temporal features.
+- Advanced Models: Experiment with XGBoost, LightGBM, or neural networks for better performance. 
 **Completed Experimentation with XGBoost and shared results with SHAP Interpretation. Refer the Appendix section)** 
 
 **2. Deployment Strategies (for Customer Retention, Reactive >> Proactive apprach)**
