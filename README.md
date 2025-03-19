@@ -466,7 +466,7 @@ https://github.com/harishlv777/Capstone_CC_Churn/blob/main/plots/Capstone_CC_Chu
 - SiddiCC_Churn.ipynb - Jupyter notebook
 - data/SiddiCC_Churn_data.csv - Contact Center dataset
 - plots/Capstone_CC_Churn_plots.pdf - plots supporting the analysis
-- readings - CRISP-DM-BANK.pdf CRISP-DM methodology document
+- readings - crisp-dm-overview.pdf CRISP-DM methodology document
 - readme.md - current file
 ## ---------------------------------------------------------------------------- ## 
 # Requirements
