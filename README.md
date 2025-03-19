@@ -1,6 +1,6 @@
 # Capstone_ContactCenter_Churn for Software as a Subscription (SaaS) Business
 ## Prediction of Churn in SaaS business using Contact Center data and Machine Learning models.
-Final Report built based on Capstone project template can be found below
+### Final Report built based on Capstone project template can be found below
 https://github.com/harishlv777/Capstone_CC_Churn/blob/main/Capstone%20Project_Final%20Report_Siddi_Harish_Laxmi_Narasimha_Venugopal.pdf
 - Problem Statement
 - Model Outcomes or Predictions
@@ -13,7 +13,7 @@ https://github.com/harishlv777/Capstone_CC_Churn/blob/main/Capstone%20Project_Fi
    - Experimentation with XGBoost and SHAP Interpretation
    - Non technical report
 
-README Contents
+## README
 
 ## Executive Summary
 "In today's subscription-based economy, high customer churn poses a significant threat to enterprises and service providers. This capstone project tackles this critical challenge by leveraging machine learning to predict customer churn risk within a contact center. By analyzing data encompassing customer interactions, agent performance, and demographic factors, the project aims to develop a predictive model capable of identifying customers at high risk of churn. This model will empower contact centers to proactively implement targeted retention strategies, ultimately boosting customer satisfaction and minimizing revenue attrition.
