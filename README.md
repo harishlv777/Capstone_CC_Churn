@@ -20,18 +20,18 @@ https://github.com/harishlv777/Capstone_CC_Churn/blob/main/Capstone%20Project_Fi
 
 ## Problem Statement: Why do Customers leave?
 Key factors contributing to churn were identified:
-•	Basic Subscription Plans – Customers on lower-tier plans tend to leave faster than premium users.
-•	Frequent Complaints – Customers who report multiple issues are more likely to leave.
-•	Low Usage – Less engagement with the service indicates a risk of churn.
-•	Short Subscription Periods – Customers with shorter subscriptions are more likely to cancel.
+- Basic Subscription Plans – Customers on lower-tier plans tend to leave faster than premium users.
+- Frequent Complaints – Customers who report multiple issues are more likely to leave.
+- Low Usage – Less engagement with the service indicates a risk of churn.
+- Short Subscription Periods – Customers with shorter subscriptions are more likely to cancel.
 
 ## Solution
 As part of this Capstone project a machine learning model is developed to identify at-risk customers before they churn. This allows businesses to proactively implement targeted retention strategies.
 Key highlights include:
-•	95% Accuracy – The model successfully predicts potential churners.
-•	Key Predictors – Call duration, complaints, and subscription type were the top indicators.
-•	Churn Indicators: Customer complaints, Low usage of services, Short subscription lengths, Basic subscription plans
-•	Proactive Strategies – By identifying high-risk customers, businesses can take action before they leave.
+- 95% Accuracy – The model successfully predicts potential churners.
+- Key Predictors – Call duration, complaints, and subscription type were the top indicators.
+- Churn Indicators: Customer complaints, Low usage of services, Short subscription lengths, Basic subscription plans
+- Proactive Strategies – By identifying high-risk customers, businesses can take action before they leave.
 
 ## Key Findings
 1. Customer Behavior:
