@@ -286,6 +286,8 @@ Top-performing model was chosen Best model based on ROC-AUC & F1-Score.
 - **KNN's recall scores misses majority of actual churners, it is considered riskier for business.**
   
 - #### Overall, Random Forest, XGBoost stands out as the best-performing model, closely followed by Gradient Boosting, especially in terms of overall accuracy, AUC, and balanced performance across both classes.
+- Random Forest or Gradient Boosting typically outperformed other models (like Logistic Regression, SVM, or KNN) in terms of AUC-ROC (e.g., ~0.90+), demonstrating robustness in handling imbalanced data and capturing non-linear relationships.
+- XGBoost showed superior performance in terms of accuracy, AUC-ROC, and precision-recall metrics.
 
 ## Hyperparameter Tuning
 Used GridSearchCV to fine-tune Random Forest parameters:
