@@ -1,8 +1,66 @@
 # Capstone_ContactCenter_Churn for Software as a Subscription (SaaS) Business
 ## Prediction of Churn in SaaS business using Contact Center data and Machine Learning models.
-
+## Executive Summary
 "In today's subscription-based economy, high customer churn poses a significant threat to enterprises and service providers. This capstone project tackles this critical challenge by leveraging machine learning to predict customer churn risk within a contact center. By analyzing data encompassing customer interactions, agent performance, and demographic factors, the project aims to develop a predictive model capable of identifying customers at high risk of churn. This model will empower contact centers to proactively implement targeted retention strategies, ultimately boosting customer satisfaction and minimizing revenue attrition.
 
+## Problem Statement: Why do Customers leave?
+Key factors contributing to churn were identified:
+•	Basic Subscription Plans – Customers on lower-tier plans tend to leave faster than premium users.
+•	Frequent Complaints – Customers who report multiple issues are more likely to leave.
+•	Low Usage – Less engagement with the service indicates a risk of churn.
+•	Short Subscription Periods – Customers with shorter subscriptions are more likely to cancel.
+
+## Solution
+As part of this Capstone project a machine learning model is developed to identify at-risk customers before they churn. This allows businesses to proactively implement targeted retention strategies.
+Key highlights include:
+•	95% Accuracy – The model successfully predicts potential churners.
+•	Key Predictors – Call duration, complaints, and subscription type were the top indicators.
+•	Churn Indicators: Customer complaints, Low usage of services, Short subscription lengths, Basic subscription plans
+•	Proactive Strategies – By identifying high-risk customers, businesses can take action before they leave.
+
+## Key Findings
+1. Customer Behavior:
+   - Customers with basic subscriptions have a higher churn rate
+   - Higher-value customers are less likely to churn
+2. Predictive Model:
+   - Random Forest model achieved 95% accuracy in predicting churn
+   - Key predictors: Call duration, complaint history, and subscription type
+   - XGBoost Advanced model and experimentation showed promising results. XGBoost model performed exceptionally well with high accuracy (97%), precision (91%), and an outstanding AUC score (0.99). It effectively identifies most churners while keeping false alarms low.
+3.	SHAP interpretation demonstrated deeper insights. The SHAP plot reveals that customer usage metrics (Status, Frequency_of_Use) and service quality indicators (Call Failure, Complains) are the most influential features in the model's predictions
+4.	Use XGBoost modeling to perform initial controlled environment/production trials, leverage SHAP to interpret best preforming model results, derive business insights and derive next best actions
+
+## Top Features Impacting Churn
+- Status: Customers with Status = 1 (basic software subscription) have a higher churn rate compared to customers with Status = 0. It would be good to target the customers with basic subscription plans through campaigns, dedicated customer success managers, discounts, trial to uplift them to premium subscription with value added features. There more customers with “Basic Subscription (base plan)” who would cancel a subscription service than engaged customers with added features who actively use subscription programs
+- Call Failure: Higher call failures strongly correlated with churn (technical issues drive dissatisfaction).
+- Complains: Complaints were a direct indicator of dissatisfaction.
+- Usage Patterns: Low "Seconds of Use" or "Frequency of Use" signaled disengagement.
+- Customer Value: Lower-value customers were more likely to churn.
+- Subscription Length: Newer customers showed higher churn risk
+
+## Recommendations
+1.	Upgrade Basic Subscriptions: Target customers with basic plans through:
+   - Personalized campaigns
+   - Dedicated customer success managers
+   - Discounts or trials for premium features
+2.	Improve Technical Quality: Reduce call failures to decrease dissatisfaction
+3.	Proactive Outreach: Use the predictive model to identify at-risk customers and intervene early
+4.	Enhance Customer Value: Develop strategies to increase usage and subscription length
+5.	Streamline Complaint Resolution: Implement efficient processes to address and resolve customer complaints quickly
+
+## Implementation
+1.	Integrate the predictive model into the contact center's Customer Relationship Management (CRM) system
+2.	Train customer service representatives to use model insights for personalized interactions
+3.	Develop automated triggers for proactive retention strategies based on churn risk predictions
+4.	Regularly update and refine the model with new data to maintain accuracy
+
+## Expected Outcomes
+•	Reduction in overall churn rate
+•	Increased customer retention and lifetime value
+•	Improved operational efficiency in the contact center
+•	Enhanced customer satisfaction and loyalty
+By combining Model performance data, AI/ML customer insights, and proactive outreach, businesses can retain more customers, improve loyalty, and increase profitability. This ML based data-driven approach ensures that businesses stay ahead of churn before it becomes a problem.
+## ---------------------------------------------------------------------------------------------- ## 
+# Final Report (Detailed)
 # 1. Business Understanding
 ### Churn 
 Churn refers to a customer discontinuing their relationship with a business.
