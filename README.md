@@ -44,7 +44,8 @@ Several challenges may impact the project's scope and execution:
 - Interpretability – Ensuring the model is explainable for business stakeholders to act on insights effectively.
 ## ---------------------------------------------------------------------------------------------- ## 
 # 2. Data Understanding
-Data source: "data/SiddiCC_Churn_data.csv" containing customer data
+Data source: "data/SiddiCC_Churn_data.csv" containing customer data.
+
 The dataset consists of 3,150 records and 25 features, covering various aspects of customer behavior, usage, and interactions with the contact center.
 
 ## Key Features:
